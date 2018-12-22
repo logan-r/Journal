@@ -1,7 +1,16 @@
+// Default gradient to use
+$gradient: linear-gradient(to right, #ff9966, #ff5e62)
+    
 html
     // Set font defaults
     font-family: 'Lato', sans-serif
     font-size: 16px
+
+html, body
+    // Make html and body fill page
+    height: 100%
+    width: 100%
+    padding: 0
 
 hr
     // Give all hr elements a consitant style
@@ -12,11 +21,27 @@ hr
     margin: 1em 0
     padding: 0
 
+.vertically-centered-container
+    // Wraps an element that needs to be vertically centered
+    width: 100%
+    height: 100%
+    position: relative
+
+%vertically-centered
+    // Superclass for elements that are vertically centered in their
+    // parent
+    position: absolute
+    top: 50%
+    width: 100%
+    transform: translate(0, -50%)
+
 .hero-intro
     // Heading that informs the user what this app is
+    @extend %vertically-centered
     text-align: center
-    margin-top: 140px
     font-family: 'Goudy Old Style', serif
+    padding-bottom: 12px
+    top: 49%
 
     .title
         // "Journal" in big letter
@@ -49,10 +74,12 @@ hr
         margin-bottom: 67px
     
     .call-to-action
+        // Primary button that prompts user to take some action
+        // should be the center of attention for the page
         font-family: 'Lato', sans-serif
         font-size: 0.9em
         color: #fff
-        background: linear-gradient(to right, #ff9966, #ff5e62)
+        background: $gradient
         border-radius: 20px
         padding: 14px 17px 13px 17px
         text-decoration: none
@@ -61,3 +88,8 @@ hr
 
         &:hover
             box-shadow: 0 0 9px 3px #ff996699
+
+/* Modals (like login/sign up popup)
+ ==============================================================*/
+body.modal-bg
+    background: $gradient

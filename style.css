@@ -2,6 +2,11 @@ html {
   font-family: "Lato", sans-serif;
   font-size: 16px; }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0; }
+
 hr {
   display: block;
   height: 1px;
@@ -10,10 +15,22 @@ hr {
   margin: 1em 0;
   padding: 0; }
 
+.vertically-centered-container {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.hero-intro {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%); }
+
 .hero-intro {
   text-align: center;
-  margin-top: 140px;
-  font-family: "Goudy Old Style", serif; }
+  font-family: "Goudy Old Style", serif;
+  padding-bottom: 12px;
+  top: 49%; }
   .hero-intro .title {
     font-size: 3.8rem;
     margin-top: 6px;
@@ -47,5 +64,10 @@ hr {
     transition: box-shadow 0.5s; }
     .hero-intro .call-to-action:hover {
       box-shadow: 0 0 9px 3px #ff996699; }
+
+/* Modals (like login/sign up popup)
+ * ============================================================== */
+body.modal-bg {
+  background: linear-gradient(to right, #ff9966, #ff5e62); }
 
 /*# sourceMappingURL=style.css.map */
